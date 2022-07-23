@@ -1,0 +1,72 @@
+Michael T Mabvira [ 0776383589  : mtmabvira98@gmail.com ]
+Error log file (Ecocash Holdings Assignment Response)
+
+
+1.econet-utils
+-Error on Logger
+Non-static field logger cannot be referenced from a static context
+
+Solved by:
+I have changed variable "logger" to become a static variable so we can use it on static methods 
+
+2.electronic-payments-domain
+Error - Named query is incorrect 
+
+Solved by:
+The named query has a wrong classname so i changed 'Request' with SubscriberRequest
+
+3.electronic-business-payments
+Error1 - Used subscriberRequestDao.persist() to save SubscriberRequest. The persist() method is not defined in subscriberRequestDao repository.
+Error2 - Used subscriberRequestDao.update() to update SubscriberRequest. The update() method is not defined in subscriberRequestDao repository.
+
+Solved by:
+I used the save() of subscriberRequestDao repository to save/insert and update SubscriberRequest.
+
+4.intelligent-network-api
+Error - log4j dependencies not found
+
+Resolved
+I managed to add log4j in pom file with the same version as parent module.
+Also, the path variable partnerCode was not passed as parameter on method enquireAirtimeBalance so i ,managed to add the path variable.
+
+
+
+5.electronic-payments-domain
+Error - @PreInsert annotation is not found. This class does not exists in the hibernate persistence library hence the error.
+
+Solved by:
+I have changed @PreInsert to @PrePersist
+
+
+6.electronic-business-payments
+Error2 - Sytanx error when calling super method inside constructor.
+
+Solved by:
+
+
+7.electronic-business-payments
+Error1: persist method not implemented
+Error2: update method not found - no restful endpoint for updating payment
+
+Solved by:
+
+8.Error (log4j2.xml)
+Error1 - log path error
+
+Solved by:
+I just correctly fixed the configurations
+
+9.intelligent-network-api
+Resolved
+partnerCode parameter not annotated.
+
+10.electronic-payments-api
+Resolved
+I managed to add @Autowired annotation in EpayResource for EpayRequestProcessor & ReportingProcessor.
+
+
+
+
+
+
+
